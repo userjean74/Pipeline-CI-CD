@@ -22,4 +22,4 @@ jobs:
       - name: Run tests
         run: npm test
         
-      - test: complete!
+      - run: complete!
