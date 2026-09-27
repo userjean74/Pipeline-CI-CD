@@ -1,0 +1,23 @@
+name: pipeline
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: npn install
+
+      - name: test
+        run: npm test
